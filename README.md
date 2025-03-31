@@ -15,7 +15,7 @@
         </div>
     </header>
 
-    <section class="quiz">
+<section class="quiz">
         <h2>اختبار الشخصية</h2>
         <form id="personality-quiz">
             <label for="mood">كيف تصف مزاجك؟</label>
@@ -26,35 +26,41 @@
                 <option value="كلاسيكي">كلاسيكي</option>
             </select>
 
-            <label for="fragrance">ما هي الروائح التي تفضلها؟</label>
+          <label for="fragrance">ما هي الروائح التي تفضلها؟</label>
+        
             <select id="fragrance" name="fragrance">
-                <option value="زهور">زهور</option>
-                <option value="فاكهة">فاكهة</option>
+             <option value="زهور">زهور</option>
+              <option value="فاكهة">فاكهة</option>
                 <option value="خشب">خشب</option>
                 <option value="توابل">توابل</option>
-            </select>
+            
+         </select>
 
-            <button type="submit">احصل على توصية</button>
-        </form>
-    </section>
+         <button type="submit">احصل على توصية</button>
+       </form>
+ </section>
 
-    <section id="recommendation">
-        <h2>توصيات العطور</h2>
-        <div id="recommended-fragrance">
-            <!-- ستظهر التوصية هنا بعد اختبار الشخصية -->
-        </div>
-    </section>
+ <section id="recommendation">
+      <h2>توصيات العطور</h2> 
+        
+<div id="recommended-fragrance">
 
-    <footer>
+
+            
+       <!-- ستظهر التوصية هنا بعد اختبار الشخصية -->
+ </div>
+ </section>
+
+   <footer>
         <p>&copy; 2025 عطر شخصيتك. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+  <script src="script.js"></script>
+</body> 
 </html>
 {
 
-    margin: 0;
+  margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -130,14 +136,14 @@ footer {
 document.getElementById('personality-quiz').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // الحصول على الاختيارات
-    const mood = document.getElementById('mood').value;
+ // الحصول على الاختيارات
+ const mood = document.getElementById('mood').value;
     const fragrance = document.getElementById('fragrance').value;
 
-    // توصية العطر بناءً على الاختيارات
-    let recommendation = '';
+ // توصية العطر بناءً على الاختيارات
+   let recommendation = '';
 
-    if (mood === 'مغامر' && fragrance === 'توابل') {
+if (mood === 'مغامر' && fragrance === 'توابل') {
         recommendation = 'عطر التوابل الغني سيمنحك تجربة مغامرة مثيرة!';
     } else if (mood === 'هادئ' && fragrance === 'زهور') {
         recommendation = 'عطر زهري هادئ سيعكس شخصيتك الرقيقة.';
@@ -147,9 +153,9 @@ document.getElementById('personality-quiz').addEventListener('submit', function 
         recommendation = 'عطر خشبي كلاسيكي يناسب أسلوبك الراقي.';
     }
 
-    // عرض التوصية
-    const recommendationDiv = document.getElementById('recommended-fragrance');
+ // عرض التوصية
+const recommendationDiv = document.getElementById('recommended-fragrance');
     recommendationDiv.textContent = recommendation;
 
-    document.getElementById('recommendation').style.display = 'block';
+document.getElementById('recommendation').style.display = 'block';
 });
